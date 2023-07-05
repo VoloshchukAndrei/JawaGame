@@ -1,27 +1,47 @@
 import java.util.Random;
 
-public class Heroes {
+import java.util.ArrayList;
+
+public abstract class Heroes implements InGameInterface {
 
     protected String name;
     protected int hp;
     protected static Random r;
     protected static int number;
+    Coordinates coordinates;
 
     static {
         Heroes.number = 0;
         Heroes.r = new Random();
     }
-    public Heroes(String name, int hp) {
+    public Heroes(String name, int x, int y) {
         this.name = name;
-        this.hp = hp;
+        coordinates = new Coordinates(x, y);
     }
 
-    public Heroes() {
-        this(String.format("Hero_Name #%d", ++Heroes.number),
-                Heroes.r.nextInt(100, 200));
-    }
-
+    @Override
     public String getInfo() {
+        return String.format("name:%s x:%d y:%d", name, coordinates.x, coordinates.y);
+    }
+
+    public Heroes nearest(ArrayList<Heroes> units) {
+        double nearestDistance = Double.MAX_VALUE;
+        Heroes nearestEnemy = null;
+        for (int i = 0; i < units.size(); i++) {
+            if(coordinates.countDistance(units.get(i).coordinates) < nearestDistance) {
+                nearestEnemy = units.get(i);
+                nearestDistance = coordinates.countDistance(units.get(i).coordinates);
+            }
+        }
+        return nearestEnemy;
+    }
+
+    @Override
+    public void step(ArrayList<Heroes> units) {
+
+    }
+
+    public String getInformation() {
         return String.format("Name: %s  Hp: %d  Type: %s",
                 this.name, this.hp, this.getClass().getSimpleName());
     }

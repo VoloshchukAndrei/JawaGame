@@ -1,13 +1,25 @@
+import java.util.ArrayList;
+
 public class Spearman extends Heroes {
 
     private int force;
-    public Spearman() {
-        super(String.format("Hero_Spearman #%d", ++Spearman.number),
-                Spearman.r.nextInt(100, 200));
-        this.force = Spearman.r.nextInt(120, 170);
+    public Spearman(String name, int x, int y) {
+        super(name, x, y);
+        this.hp = Spearman.r.nextInt(100, 200);
+        this.force = Spearman.r.nextInt(50, 150);
+    }
+    public String getInformation() {
+        return String.format("%s  Force: %d",super.getInformation(), this.force);
     }
 
+    @Override
     public String getInfo() {
-        return String.format("%s  Force: %d",super.getInfo(), this.force);
+        return name;
+    }
+
+    @Override
+    public void step(ArrayList<Heroes> units) {
+        Heroes tmp = nearest(units);
+        System.out.println(tmp.name + " " + coordinates.countDistance(tmp.coordinates));
     }
 }
