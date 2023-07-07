@@ -9,19 +9,22 @@ public class Crossbowman extends Heroes {
         this.hp = Crossbowman.r.nextInt(100, 200);
         this.arrow = Crossbowman.r.nextInt(50, 150);
     }
-
-    public String getInformation() {
-        return String.format("%s  Arrow: %d", super.getInformation(), this.arrow);
-    }
-
     @Override
     public String getInfo() {
-        return name;
+        return String.format("%s  Arrow: %d", super.getInfo(), this.arrow);
     }
 
     @Override
-    public void step(ArrayList<Heroes> units) {
-        Heroes tmp = nearest(units);
-        System.out.println(tmp.name + " " + coordinates.countDistance(tmp.coordinates));
+    public void step(ArrayList<Heroes> unitsEnemys, ArrayList<Heroes> unitsAllies) {
+        if (hp == 0 || arrow == 0) {
+            return;
+        }
+        Attack(nearest(unitsEnemys));
+//        if(unitsAllies.contains(Peasant.class)){
+//             return;
+//        }
+        arrow--;
+        System.out.println(getInfo());
+
     }
 }

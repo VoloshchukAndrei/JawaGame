@@ -9,18 +9,14 @@ public class Magician extends Heroes {
         this.hp = Magician.r.nextInt(100, 200);
         this.mana = Magician.r.nextInt(50, 150);
     }
-    public String getInformation() {
-        return String.format("%s  Mana: %d",super.getInformation(), this.mana);
-    }
-
     @Override
     public String getInfo() {
-        return name;
+        return String.format("%s  Mana: %d", super.getInfo(), this.mana);
     }
 
     @Override
-    public void step(ArrayList<Heroes> units) {
-        Heroes tmp = nearest(units);
+    public void step(ArrayList<Heroes> unitsEnemys, ArrayList<Heroes> unitsAllies) {
+        Heroes tmp = nearest(unitsEnemys);
         System.out.println(tmp.name + " " + coordinates.countDistance(tmp.coordinates));
     }
 }

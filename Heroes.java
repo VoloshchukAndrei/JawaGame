@@ -21,7 +21,7 @@ public abstract class Heroes implements InGameInterface {
 
     @Override
     public String getInfo() {
-        return String.format("name:%s x:%d y:%d", name, coordinates.x, coordinates.y);
+        return String.format("Name: %s  Hp: %d  Type: %s x: %d y: %d", this.name, this.hp, this.getClass().getSimpleName(), coordinates.x, coordinates.y);
     }
 
     public Heroes nearest(ArrayList<Heroes> units) {
@@ -36,15 +36,14 @@ public abstract class Heroes implements InGameInterface {
         return nearestEnemy;
     }
 
-    @Override
-    public void step(ArrayList<Heroes> units) {
+//    @Override
+//    public void step(ArrayList<Heroes> unitsEnemys, ArrayList<Heroes> unitsAllies) {
+//    }
 
-    }
-
-    public String getInformation() {
-        return String.format("Name: %s  Hp: %d  Type: %s",
-                this.name, this.hp, this.getClass().getSimpleName());
-    }
+//    public String getInformation() {
+//        return String.format("Name: %s  Hp: %d  Type: %s",
+//                this.name, this.hp, this.getClass().getSimpleName());
+//    }
 
     public void healed(Heroes target) {
         int cure = Heroes.r.nextInt(5, 15);

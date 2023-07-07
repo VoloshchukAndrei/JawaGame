@@ -8,18 +8,14 @@ public class Spearman extends Heroes {
         this.hp = Spearman.r.nextInt(100, 200);
         this.force = Spearman.r.nextInt(50, 150);
     }
-    public String getInformation() {
-        return String.format("%s  Force: %d",super.getInformation(), this.force);
-    }
-
     @Override
     public String getInfo() {
-        return name;
+        return String.format("%s  Force: %d", super.getInfo(), this.force);
     }
 
     @Override
-    public void step(ArrayList<Heroes> units) {
-        Heroes tmp = nearest(units);
+    public void step(ArrayList<Heroes> unitsEnemys, ArrayList<Heroes> unitsAllies) {
+        Heroes tmp = nearest(unitsEnemys);
         System.out.println(tmp.name + " " + coordinates.countDistance(tmp.coordinates));
     }
 }

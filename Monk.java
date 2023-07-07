@@ -8,18 +8,14 @@ public class Monk extends Heroes {
         this.hp = Monk.r.nextInt(100, 200);
         this.ambrosia = Monk.r.nextInt(50, 150);
     }
-    public String getInformation() {
-        return String.format("%s  Ambrosia: %d",super.getInformation(), this.ambrosia);
-    }
-
     @Override
     public String getInfo() {
-        return name;
+        return String.format("%s  Ambrosia: %d", super.getInfo(), this.ambrosia);
     }
 
     @Override
-    public void step(ArrayList<Heroes> units) {
-        Heroes tmp = nearest(units);
+    public void step(ArrayList<Heroes> unitsEnemys, ArrayList<Heroes> unitsAllies) {
+        Heroes tmp = nearest(unitsEnemys);
         System.out.println(tmp.name + " " + coordinates.countDistance(tmp.coordinates));
     }
 }

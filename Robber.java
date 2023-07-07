@@ -8,18 +8,14 @@ public class Robber extends Heroes {
         this.hp = Robber.r.nextInt(100, 200);
         this.endurance = Robber.r.nextInt(50, 150);
     }
-    public String getInformation() {
-        return String.format("%s  Endurance: %d",super.getInformation(), this.endurance);
-    }
-
     @Override
     public String getInfo() {
-        return name;
+        return String.format("%s  Endurance: %d", super.getInfo(), this.endurance);
     }
 
     @Override
-    public void step(ArrayList<Heroes> units) {
-        Heroes tmp = nearest(units);
+    public void step(ArrayList<Heroes> unitsEnemys, ArrayList<Heroes> unitsAllies) {
+        Heroes tmp = nearest(unitsEnemys);
         System.out.println(tmp.name + " " + coordinates.countDistance(tmp.coordinates));
     }
 }
