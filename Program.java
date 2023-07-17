@@ -164,11 +164,11 @@ public class Program {
                 }
 
                 if (Heroes.teamDead(team1)) {
-                    System.out.print("Team 2(Blue) win!");
+                    System.out.print("-------------!!!TEAM2 (BLUE) WIN!!!");
                     break;
                 }
                 if (Heroes.teamDead(team2)) {
-                    System.out.print("Team 1(Green) win!");
+                    System.out.print("-------------!!!TEAM2 (GREEN) WIN!!!");
                     break;
                 }
             }

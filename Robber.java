@@ -5,7 +5,7 @@ public class Robber extends Heroes {
     public Robber(String name, int x, int y) {
         super(name, x, y);
         hp = Robber.r.nextInt(90, 100);
-        endurance = Robber.r.nextInt(80, 100);
+        endurance = Robber.r.nextInt(800, 900);
         attackRange = 1;
     }
     @Override

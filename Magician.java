@@ -16,6 +16,15 @@ import java.util.ArrayList;
             return;
         }
         if (mana == 0) {
+            if (coordinates.countDistance(nearest(unitsEnemys).coordinates) <= attackRange) {
+                Attack(nearest(unitsEnemys));
+                state = "Attack";
+                System.out.println(getInfo());
+            }
+            else {
+                move(nearest(unitsEnemys).coordinates, unitsAllies);
+                state = "Moving";
+            }
             return;
         }
         Healed(Treatment(unitsAllies));

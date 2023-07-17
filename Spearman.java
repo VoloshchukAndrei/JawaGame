@@ -5,7 +5,7 @@ public class Spearman extends Heroes {
     public Spearman(String name, int x, int y) {
         super(name, x, y);
         hp = Spearman.r.nextInt(90, 100);
-        force = Spearman.r.nextInt(80, 100);
+        force = Spearman.r.nextInt(800, 900);
         attackRange = 1;
     }
     @Override

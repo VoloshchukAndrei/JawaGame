@@ -18,7 +18,15 @@ public class Squire extends Heroes {
             return;
         }
         if (weapon == 0) {
-            weapon = 0;
+            if (coordinates.countDistance(nearest(unitsEnemys).coordinates) <= attackRange) {
+                Attack(nearest(unitsEnemys));
+                state = "Attack";
+                System.out.println(getInfo());
+            }
+            else {
+                move(nearest(unitsEnemys).coordinates, unitsAllies);
+                state = "Moving";
+            }
             return;
         }
         Random rand = new Random();

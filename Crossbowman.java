@@ -16,6 +16,16 @@ public class Crossbowman extends Heroes {
             return;
         }
         if (bolt == 0) {
+            if (coordinates.countDistance(nearest(unitsEnemys).coordinates) <= attackRange) {
+                Attack(nearest(unitsEnemys));
+                state = "Attack";
+                System.out.println(getInfo());
+            }
+            else {
+                move(nearest(unitsEnemys).coordinates, unitsAllies);
+                state = "Moving";
+            }
+            System.out.println(getInfo());
             return;
         }
         Attack(nearest(unitsEnemys));
