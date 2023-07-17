@@ -1,21 +1,28 @@
 import java.util.ArrayList;
 
 public class Monk extends Heroes {
-
-    private int ambrosia;
     public Monk(String name, int x, int y) {
         super(name, x, y);
-        this.hp = Monk.r.nextInt(100, 200);
-        this.ambrosia = Monk.r.nextInt(50, 150);
+        hp = Monk.r.nextInt(75, 100);
+        ambrosia = Monk.r.nextInt(50, 60);
     }
     @Override
     public String getInfo() {
-        return String.format("%s  Ambrosia: %d", super.getInfo(), this.ambrosia);
+        return String.format("%s  Ambrosia: %d", super.getInfo(), ambrosia);
     }
-
     @Override
     public void step(ArrayList<Heroes> unitsEnemys, ArrayList<Heroes> unitsAllies) {
-        Heroes tmp = nearest(unitsEnemys);
-        System.out.println(tmp.name + " " + coordinates.countDistance(tmp.coordinates));
+        if ((hp == 0)) {
+            return;
+        }
+        if (ambrosia == 0) {
+            return;
+        }
+        Healed(Treatment(unitsAllies));
+        ambrosia = ambrosia - Heroes.r.nextInt(5, 15);
+        if (ambrosia <= 0) {
+            ambrosia = 0;
+        }
+        System.out.println(getInfo());
     }
 }

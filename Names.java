@@ -1,16 +1,14 @@
 public enum Names {
 
+    Magician("Hedin"),
     Monk("Francis"),
-    Magician("Gandalf"),
-    Sniper("Aragorn"),
-    Crossbowman("Legolas"),
-    Robber("Gimli"),
-    Spearman("Frodo"),
-    Peasant("Sem");
-
+    Archer("Rience"),
+    Crossbowman("A.O'Sullivan"),
+    Robber("Bayaz"),
+    Spearman("Falkor"),
+    Peasant("Gaius"),
+    Squire("Kael");
     private String name;
-
     Names(String name) {this.name = name;}
-
     public String getName() {return name;}
 }

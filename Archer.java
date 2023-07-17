@@ -1,25 +1,25 @@
 import java.util.ArrayList;
 
-public class Crossbowman extends Heroes {
-     public Crossbowman(String name, int x, int y) {
-         super(name, x, y);
-        hp = Crossbowman.r.nextInt(90, 100);
-        bolt = Crossbowman.r.nextInt(5, 10);
+public class Archer extends Heroes {
+    public Archer(String name, int x, int y) {
+        super(name, x, y);
+        hp = Archer.r.nextInt(90, 100);
+        arrow = Archer.r.nextInt(5, 10);
     }
     @Override
     public String getInfo() {
-        return String.format("%s  Bolt: %d", super.getInfo(), bolt);
+        return String.format("%s  Arrow: %d", super.getInfo(), arrow);
     }
     @Override
     public void step(ArrayList<Heroes> unitsEnemys, ArrayList<Heroes> unitsAllies) {
         if ((hp == 0)) {
             return;
         }
-        if (bolt == 0) {
+        if (arrow == 0) {
             return;
         }
         Attack(nearest(unitsEnemys));
-        bolt--;
+        arrow--;
         System.out.println(getInfo());
     }
 }

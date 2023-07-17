@@ -2,20 +2,36 @@ import java.util.ArrayList;
 
 public class Robber extends Heroes {
 
-    private int endurance;
     public Robber(String name, int x, int y) {
         super(name, x, y);
-        this.hp = Robber.r.nextInt(100, 200);
-        this.endurance = Robber.r.nextInt(50, 150);
+        hp = Robber.r.nextInt(90, 100);
+        endurance = Robber.r.nextInt(80, 100);
+        attackRange = 1;
     }
     @Override
     public String getInfo() {
-        return String.format("%s  Endurance: %d", super.getInfo(), this.endurance);
+        return String.format("%s  Endurance: %d", super.getInfo(), endurance);
     }
-
     @Override
     public void step(ArrayList<Heroes> unitsEnemys, ArrayList<Heroes> unitsAllies) {
-        Heroes tmp = nearest(unitsEnemys);
-        System.out.println(tmp.name + " " + coordinates.countDistance(tmp.coordinates));
+        if ((hp == 0)) {
+            return;
+        }
+        if (endurance == 0) {
+            return;
+        }
+        if (coordinates.countDistance(nearest(unitsEnemys).coordinates) <= attackRange) {
+            Attack(nearest(unitsEnemys));
+            endurance = endurance - Heroes.r.nextInt(5, 15);
+            if (endurance <= 0) {
+                endurance = 0;
+            }
+            state = "Attack";
+            System.out.println(getInfo());
+        }
+        else {
+            move(nearest(unitsEnemys).coordinates, unitsAllies);
+            state = "Moving";
+        }
     }
 }
