@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
  class Magician extends Heroes {
 
     public Magician(String name, int x, int y) {

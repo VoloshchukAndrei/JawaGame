@@ -26,23 +26,167 @@ public class View {
         String out = "| ";
         for (Heroes human: Program.team1) {
             if (human.coordinates.x == x && human.coordinates.y == y){
-                if (human.hp == 0) {
-                    out = "|" + (AnsiColors.ANSI_RED + human.toString().charAt(0) + AnsiColors.ANSI_RESET);
+                if (human.name.equals("Hedin")) {
+                    if (human.hp == 0) {
+                        out = "|" + (AnsiColors.ANSI_RED + '⚚' + AnsiColors.ANSI_RESET);
+                        break;
+                    }
+                    out = "|" + (AnsiColors.ANSI_GREEN + '⚚' + AnsiColors.ANSI_RESET);
                     break;
                 }
-                out = "|" + (AnsiColors.ANSI_GREEN + human.toString().charAt(0) + AnsiColors.ANSI_RESET);
-                break;
+                else {
+                    if (human.name.equals("Francis")) {
+                        if (human.hp == 0) {
+                            out = "|" + (AnsiColors.ANSI_RED + '♱' + AnsiColors.ANSI_RESET);
+                            break;
+                        }
+                        out = "|" + (AnsiColors.ANSI_GREEN + '♱' + AnsiColors.ANSI_RESET);
+                        break;
+                    }
+                    else {
+                        if (human.name.equals("Rience")) {
+                            if (human.hp == 0) {
+                                out = "|" + (AnsiColors.ANSI_RED + '➳' + AnsiColors.ANSI_RESET);
+                                break;
+                            }
+                            out = "|" + (AnsiColors.ANSI_GREEN + '➳' + AnsiColors.ANSI_RESET);
+                            break;
+                        }
+                        else {
+                            if (human.name.equals("A.O'Sullivan")) {
+                                if (human.hp == 0) {
+                                    out = "|" + (AnsiColors.ANSI_RED + '➶' + AnsiColors.ANSI_RESET);
+                                    break;
+                                }
+                                out = "|" + (AnsiColors.ANSI_GREEN + '➶' + AnsiColors.ANSI_RESET);
+                                break;
+                            }
+                            else {
+                                if (human.name.equals("Bayaz")) {
+                                    if (human.hp == 0) {
+                                        out = "|" + (AnsiColors.ANSI_RED + '⚔' + AnsiColors.ANSI_RESET);
+                                        break;
+                                    }
+                                    out = "|" + (AnsiColors.ANSI_GREEN + '⚔' + AnsiColors.ANSI_RESET);
+                                    break;
+                                }
+                                else {
+                                    if (human.name.equals("Falkor")) {
+                                        if (human.hp == 0) {
+                                            out = "|" + (AnsiColors.ANSI_RED + '↟' + AnsiColors.ANSI_RESET);
+                                            break;
+                                        }
+                                        out = "|" + (AnsiColors.ANSI_GREEN + '↟' + AnsiColors.ANSI_RESET);
+                                        break;
+                                    }
+                                    else {
+                                        if (human.name.equals("Gaius")) {
+                                            if (human.hp == 0) {
+                                                out = "|" + (AnsiColors.ANSI_RED + '☭' + AnsiColors.ANSI_RESET);
+                                                break;
+                                            }
+                                            out = "|" + (AnsiColors.ANSI_GREEN + '☭' + AnsiColors.ANSI_RESET);
+                                            break;
+                                        }
+                                        else {
+                                            if (human.name.equals("Kael")) {
+                                                if (human.hp == 0) {
+                                                    out = "|" + (AnsiColors.ANSI_RED + '⚒' + AnsiColors.ANSI_RESET);
+                                                    break;
+                                                }
+                                                out = "|" + (AnsiColors.ANSI_GREEN + '⚒' + AnsiColors.ANSI_RESET);
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 
         for (Heroes human: Program.team2) {
             if (human.coordinates.x == x && human.coordinates.y == y){
-                if (human.hp == 0) {
-                    out = "|" + (AnsiColors.ANSI_RED + human.toString().charAt(0) + AnsiColors.ANSI_RESET);
+                if (human.name.equals("Hedin")) {
+                    if (human.hp == 0) {
+                        out = "|" + (AnsiColors.ANSI_RED + '⚚' + AnsiColors.ANSI_RESET);
+                        break;
+                    }
+                    out = "|" + (AnsiColors.ANSI_BLUE + '⚚' + AnsiColors.ANSI_RESET);
                     break;
                 }
-                out = "|" + (AnsiColors.ANSI_BLUE + human.toString().charAt(0) + AnsiColors.ANSI_RESET);
-                break;
+                else {
+                    if (human.name.equals("Francis")) {
+                        if (human.hp == 0) {
+                            out = "|" + (AnsiColors.ANSI_RED + '♱' + AnsiColors.ANSI_RESET);
+                            break;
+                        }
+                        out = "|" + (AnsiColors.ANSI_BLUE + '♱' + AnsiColors.ANSI_RESET);
+                        break;
+                    }
+                    else {
+                        if (human.name.equals("Rience")) {
+                            if (human.hp == 0) {
+                                out = "|" + (AnsiColors.ANSI_RED + '➳' + AnsiColors.ANSI_RESET);
+                                break;
+                            }
+                            out = "|" + (AnsiColors.ANSI_BLUE + '➳' + AnsiColors.ANSI_RESET);
+                            break;
+                        }
+                        else {
+                            if (human.name.equals("A.O'Sullivan")) {
+                                if (human.hp == 0) {
+                                    out = "|" + (AnsiColors.ANSI_RED + '➶' + AnsiColors.ANSI_RESET);
+                                    break;
+                                }
+                                out = "|" + (AnsiColors.ANSI_BLUE + '➶' + AnsiColors.ANSI_RESET);
+                                break;
+                            }
+                            else {
+                                if (human.name.equals("Bayaz")) {
+                                    if (human.hp == 0) {
+                                        out = "|" + (AnsiColors.ANSI_RED + '⚔' + AnsiColors.ANSI_RESET);
+                                        break;
+                                    }
+                                    out = "|" + (AnsiColors.ANSI_BLUE + '⚔' + AnsiColors.ANSI_RESET);
+                                    break;
+                                }
+                                else {
+                                    if (human.name.equals("Falkor")) {
+                                        if (human.hp == 0) {
+                                            out = "|" + (AnsiColors.ANSI_RED + '↟' + AnsiColors.ANSI_RESET);
+                                            break;
+                                        }
+                                        out = "|" + (AnsiColors.ANSI_BLUE + '↟' + AnsiColors.ANSI_RESET);
+                                        break;
+                                    }
+                                    else {
+                                        if (human.name.equals("Gaius")) {
+                                            if (human.hp == 0) {
+                                                out = "|" + (AnsiColors.ANSI_RED + '☭' + AnsiColors.ANSI_RESET);
+                                                break;
+                                            }
+                                            out = "|" + (AnsiColors.ANSI_BLUE + '☭' + AnsiColors.ANSI_RESET);
+                                            break;
+                                        }
+                                        else {
+                                            if (human.name.equals("Kael")) {
+                                                if (human.hp == 0) {
+                                                    out = "|" + (AnsiColors.ANSI_RED + '⚒' + AnsiColors.ANSI_RESET);
+                                                    break;
+                                                }
+                                                out = "|" + (AnsiColors.ANSI_BLUE + '⚒' + AnsiColors.ANSI_RESET);
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         return out;

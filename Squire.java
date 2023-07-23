@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Random;
-
 public class Squire extends Heroes {
     private int weapon;
     public Squire(String name, int x, int y) {
